@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -16,23 +17,36 @@
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --border-radius: 12px;
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden; /* Mencegah scroll horizontal */
+        }
+
         body {
             background-color: var(--light-bg);
             color: var(--dark-text);
             line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
+
         /* Header & Navigation */
         header {
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
@@ -42,17 +56,21 @@
             top: 0;
             z-index: 1000;
             box-shadow: var(--shadow);
+            width: 100%;
         }
+
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
         }
+
         .logo-circle {
             width: 45px;
             height: 45px;
@@ -66,18 +84,22 @@
             font-size: 1.2rem;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         .logo-text {
             font-size: 1.8rem;
             font-weight: 700;
             letter-spacing: 1px;
         }
+
         .logo-text span {
             color: var(--primary-orange);
         }
+
         .nav-links {
             display: flex;
             gap: 25px;
         }
+
         .nav-links a {
             color: var(--light-text);
             text-decoration: none;
@@ -85,9 +107,11 @@
             transition: color 0.3s;
             position: relative;
         }
+
         .nav-links a:hover {
             color: var(--primary-orange);
         }
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -98,13 +122,16 @@
             background-color: var(--primary-orange);
             transition: width 0.3s;
         }
+
         .nav-links a:hover::after {
             width: 100%;
         }
+
         .auth-buttons {
             display: flex;
             gap: 15px;
         }
+
         .btn {
             padding: 8px 20px;
             border-radius: 30px;
@@ -113,24 +140,29 @@
             transition: all 0.3s ease;
             border: none;
         }
+
         .btn-outline {
             background: transparent;
             border: 2px solid var(--light-text);
             color: var(--light-text);
         }
+
         .btn-outline:hover {
             background: var(--light-text);
             color: var(--primary-blue);
         }
+
         .btn-primary {
             background: var(--primary-orange);
             color: var(--light-text);
         }
+
         .btn-primary:hover {
             background: #e05a2b;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(45, 91, 143, 0.85), rgba(126, 87, 194, 0.85)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
@@ -139,6 +171,7 @@
             color: var(--light-text);
             padding: 100px 0;
             text-align: center;
+            width: 100%;
         }
 
         .hero h1 {
@@ -190,6 +223,7 @@
         /* Features Section */
         .section {
             padding: 80px 0;
+            width: 100%;
         }
 
         .section-title {
@@ -326,6 +360,7 @@
             color: var(--light-text);
             text-align: center;
             padding: 80px 0;
+            width: 100%;
         }
 
         .cta h2 {
@@ -344,6 +379,8 @@
             background: var(--primary-blue);
             color: var(--light-text);
             padding: 60px 0 30px;
+            width: 100%;
+            margin-top: auto; /* Untuk memastikan footer tetap di bawah */
         }
 
         .footer-content {
